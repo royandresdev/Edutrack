@@ -23,7 +23,7 @@ const EstudianteView = ({ user, courses, average }) => {
             <img
               src={user?.profileImageUrl} // Asegúrate de que esta ruta sea correcta
               alt="Imagen"
-              className="w-[200px] h-[170px] "
+              className="w-[200px] h-[170px] object-cover"
             />
 
             {/* Contenedor para el texto a la derecha */}
