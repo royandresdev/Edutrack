@@ -7,11 +7,11 @@ import { DEMO_USER } from "../constants";
 const LOCAL_STORAGE_ID_KEY = "id";
 
 const useUser = () => {
-  const { user, status } = useSelector((state) => state);
+  const { user, mood } = useSelector((state) => state?.authentication);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (status === "DEMO") {
+    if (mood === "DEMO") {
       dispatch(setUser(DEMO_USER));
       return;
     }
@@ -32,7 +32,7 @@ const useUser = () => {
     if (!user.id) {
       fetchUser();
     }
-  }, [dispatch, user, status]);
+  }, [dispatch, user, mood]);
 
   return { user, setUser };
 };

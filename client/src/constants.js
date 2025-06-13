@@ -11,7 +11,9 @@ export const ROLES = {
 };
 
 export const DEMO_USER = {
-  id: "demo123",
-  name: "Pedro Demo",
+  userId: "demo123",
+  fullName: "Pedro Demo",
   email: "demo@example.com",
+  phoneNumber: "1234567890",
+  role: ROLES.ESTUDIANTE,
 };

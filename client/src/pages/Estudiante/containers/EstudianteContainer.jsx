@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react"; */
 import EstudianteView from "../components/EstudianteView";
-import { getDashboard } from "../services";
+/* import { getDashboard } from "../services"; */
 import { useUser } from "../../../hooks";
 
 const EstudianteContainer = () => {
-  const [dashboard, setDashboard] = useState(null);
-  const [average, setAverage] = useState(0);
+  /* const [dashboard, setDashboard] = useState(null);
+  const [average, setAverage] = useState(0); */
   const { user } = useUser();
 
   /*   const fetchDashboard = async () => {
