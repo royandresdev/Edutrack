@@ -11,28 +11,28 @@ const useUser = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (mood === "DEMO") {
+    if (mood === "DEMO" && !user) {
       dispatch(setUser(DEMO_USER));
-      return;
-    }
+    } else if (mood === "ONLINE") {
+      const fetchUser = async () => {
+        if (!user || !user.id) return;
 
-    if (!user || !user.id) return;
+        try {
+          const id = localStorage.getItem(LOCAL_STORAGE_ID_KEY);
+          if (!id)
+            throw new Error("ID de usuario no encontrado en localStorage");
+          const userData = await getUserById(id);
+          dispatch(setUser(userData));
+        } catch (error) {
+          console.error("Error al obtener el usuario:", error);
+        }
+      };
 
-    const fetchUser = async () => {
-      try {
-        const id = localStorage.getItem(LOCAL_STORAGE_ID_KEY);
-        if (!id) throw new Error("ID de usuario no encontrado en localStorage");
-        const userData = await getUserById(id);
-        dispatch(setUser(userData));
-      } catch (error) {
-        console.error("Error al obtener el usuario:", error);
+      if (!user.id) {
+        fetchUser();
       }
-    };
-
-    if (!user.id) {
-      fetchUser();
     }
-  }, [dispatch, user, mood]);
+  }, [user, mood, dispatch]);
 
   return { user, setUser };
 };
