@@ -1,32 +1,19 @@
 /* index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-h1 {
-  @apply text-[3.5rem] font-[900];
-}
-
-h2 {
-  @apply text-[3rem] font-bold;
-}
-
-h3 {
-  @apply text-[2.5rem] font-bold;
-}
-
-h4 {
-  @apply text-[2rem] font-bold;
-}
-
-h5 {
-  @apply text-[1.5rem] font-bold;
-}
-
-h6 {
-  @apply text-[1rem] font-bold;
-}
-
-body {
-  @apply bg-white-1;
+@import "tailwindcss";
+@import "./base.css";
+@import "./utilities.css";
+@theme {
+  --color-brand-primary: #722b76;
+  --color-brand-secondary: #ebe2fa;
+  --color-state-info: #a3c1da;
+  --color-state-success: #5cb85c;
+  --color-state-warning: #ffc107;
+  --color-state-error: #d9534f;
+  --color-black-1: #333333;
+  --color-black-2: #000000;
+  --color-grey-1: #4a4a4a;
+  --color-grey-2: #9e9e9e;
+  --color-white-1: #fafafa;
+  --color-white-2: #ffffff;
+  --color-beige-1: #f6e3cc;
 }
