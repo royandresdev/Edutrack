@@ -1,13 +1,31 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { setMood } from "../features/authSlice";
+import { useDispatch } from "react-redux";
 
 function Home() {
+    const dispatch = useDispatch();
+
+    const handleSetMood = (mood) => {
+        dispatch(setMood(mood));
+    };
+
     return (
         <div id="home" className="max-w-[1216px] mx-auto">
             {/* Encabezado */}
             <div className="space-y-9 py-20 max-w-[656px] mx-auto">
                 <h1 className="text-center">Bienvenido a EduTrack</h1>
-                <p className="text-center px-10 mb-8"> Un espacio diseñado para facilitar el seguimiento y la evaluación del rendimiento académico y conectar entre sí a los docentes, estudiantes y sus tutores.</p>
-                <Link className="w-max mx-auto block bg-brand-primary text-xl text-white-2 font-bold px-10 py-4 rounded-lg" to="/login">Iniciar Sesión</Link>
+                <p className="text-center px-10 mb-8">
+                    {" "}
+                    Un espacio diseñado para facilitar el seguimiento y la evaluación del
+                    rendimiento académico y conectar entre sí a los docentes, estudiantes
+                    y sus tutores.
+                </p>
+                <Link
+                    className="w-max mx-auto block bg-brand-primary text-xl text-white-2 font-bold px-10 py-4 rounded-lg"
+                    to="/login"
+                >
+                    Iniciar Sesión
+                </Link>
             </div>
 
             {/* Cards */}
@@ -20,7 +38,13 @@ function Home() {
                     {/* Content card */}
                     <div className="p-8">
                         <h2 className="text-h4 text-brand-primary">Estudiantes</h2>
-                        <p className="text-black-1">Acceden fácilmente a su historial académico y reciben retroalimentación personalizada de sus docentes.</p>
+                        <p className="text-black-1">
+                            Acceden fácilmente a su historial académico y reciben
+                            retroalimentación personalizada de sus docentes.
+                        </p>
+                        <Link onClick={() => handleSetMood("DEMO")} to="/estudiante">
+                            Demo de Estudiante
+                        </Link>
                     </div>
                 </div>
 
@@ -32,7 +56,10 @@ function Home() {
                     {/* Content card */}
                     <div className="p-8">
                         <h2 className="text-h4 text-brand-primary">Docentes</h2>
-                        <p className="text-black-1">Evalúan el rendimiento de sus estudiantes y ofrecen retroalimentación detallada sobre su progreso.</p>
+                        <p className="text-black-1">
+                            Evalúan el rendimiento de sus estudiantes y ofrecen
+                            retroalimentación detallada sobre su progreso.
+                        </p>
                     </div>
                 </div>
 
@@ -44,12 +71,15 @@ function Home() {
                     {/* Content card */}
                     <div className="p-8">
                         <h2 className="text-h4 text-brand-primary">Tutores</h2>
-                        <p className="text-black-1">Supervisan y acompañan el avance académico de los estudiantes para asegurar su éxito.</p>
+                        <p className="text-black-1">
+                            Supervisan y acompañan el avance académico de los estudiantes para
+                            asegurar su éxito.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Home;

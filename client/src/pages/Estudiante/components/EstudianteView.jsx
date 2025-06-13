@@ -1,7 +1,7 @@
-import AcademicHistoryContainer from "../containers/AcademicHistoryContainer";
-import TeacherCommentsSection from "./TeacherCommentsSection";
+/* import AcademicHistoryContainer from "../containers/AcademicHistoryContainer";
+import TeacherCommentsSection from "./TeacherCommentsSection"; */
 
-const EstudianteView = ({ user, courses, average }) => {
+const EstudianteView = ({ user }) => {
   const Tabla1 = {
     colegio: "Colegio Alemán",
     periodo: "2024-3",
@@ -59,17 +59,17 @@ const EstudianteView = ({ user, courses, average }) => {
             <div className="font-bold">Teléfono Tutor</div>
 
             <div>{Tabla2.curso}</div>
-            <div>{courses?.length}</div>
+            {/* <div>{courses?.length}</div> */}
             <div>{user?.phoneNumber}</div>
           </div>
         </div>
       </div>
 
-      <section className="mx-auto">
-        {/* Tabla de historial académico */}
+      {/* <section className="mx-auto">
+  
         <AcademicHistoryContainer courses={courses} />
 
-        {/* Promedio del periodo */}
+  
         <section className="mx-auto w-max rounded-lg border-brand-primary border py-2 px-8">
           <span className="text-brand-primary font-bold text-lg">
             Promedio del Periodo {average}
@@ -79,7 +79,7 @@ const EstudianteView = ({ user, courses, average }) => {
         {
           courses && <TeacherCommentsSection courses={courses} />
         }
-      </section>
+      </section> */}
     </div>
   );
 }

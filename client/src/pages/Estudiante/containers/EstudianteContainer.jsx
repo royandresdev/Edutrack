@@ -1,62 +1,49 @@
-
-import { useEffect, useState } from "react"
+/* import { useEffect, useState } from "react"; */
 import EstudianteView from "../components/EstudianteView";
-import { getDashboard, getUserById } from "../services";
-import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../../../features/authSlice";
+/* import { getDashboard } from "../services"; */
+import { useUser } from "../../../hooks";
 
 const EstudianteContainer = () => {
-  const [dashboard, setDashboard] = useState();
-  const dispatch = useDispatch();
-  const user = useSelector(state => state?.authentication?.user)
-  //const [promedio, setPromedio] = useState();
-  const [average, setAverage] = useState(0);
+  /* const [dashboard, setDashboard] = useState(null);
+  const [average, setAverage] = useState(0); */
+  const { user } = useUser();
 
-  const fetchUser = async () => {
-    try {
-      const id = localStorage.getItem('id');
-      const userData = await getUserById(id);
-      dispatch(setUser(userData))
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const fetchDashboard = async () => {
-    try {
-      const dashboardData = await getDashboard();
-      console.log(dashboardData)
-      setDashboard(dashboardData);
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-
-
-  /*   const obtainPromedio = (courses) => {
-      const initialValue = 0;
-      const sum = courses.reduce((previousValue, current) => previousValue + current.grades[0].gradeValue, initialValue);
-      return Math.round(sum / courses.length);
-    } */
-
-  useEffect(() => {
-    fetchUser();
-    fetchDashboard();
-  }, [])
-
-  useEffect(() => {
-    const calculateAverage = () => {
-      if (dashboard) {
-        const initialState = 0;
-        const sum = dashboard.Courses.reduce((accumulator, currentValue) => accumulator + currentValue.teachers[0].gradeValue, initialState)
-        setAverage(Math.round(sum / dashboard.Courses.length));
+  /*   const fetchDashboard = async () => {
+      try {
+        const dashboardData = await getDashboard();
+        setDashboard(dashboardData);
+      } catch (error) {
+        console.error("Error al obtener el dashboard:", error);
       }
-    }
+    };
+  
+    const calculateAverage = () => {
+      if (dashboard?.Courses?.length) {
+        const sum = dashboard.Courses.reduce(
+          (accumulator, currentValue) => accumulator + (currentValue.teachers[0]?.gradeValue || 0),
+          0
+        );
+        setAverage(Math.round(sum / dashboard.Courses.length));
+      } else {
+        setAverage(0);
+      }
+    };
+  
+    useEffect(() => {
+      fetchDashboard();
+    }, []);
+  
+    useEffect(() => {
+      calculateAverage();
+    }, [dashboard]); */
 
-    calculateAverage();
-  }, [dashboard])
+  return user || user?.id ? (
+    <EstudianteView
+      user={user} /* courses={dashboard?.Courses} average={average} */
+    />
+  ) : (
+    <p>No se encontró información del usuario.</p>
+  );
+};
 
-  return <EstudianteView user={user} courses={dashboard?.Courses} average={average} />
-}
-export default EstudianteContainer
+export default EstudianteContainer;
