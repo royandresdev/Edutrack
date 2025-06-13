@@ -1,7 +1,7 @@
-/* import AcademicHistoryContainer from "../containers/AcademicHistoryContainer";
-import TeacherCommentsSection from "./TeacherCommentsSection"; */
+import AcademicHistoryContainer from "../containers/AcademicHistoryContainer";
+import TeacherCommentsSection from "./TeacherCommentsSection";
 
-const EstudianteView = ({ user }) => {
+const EstudianteView = ({ user, courses, average }) => {
   const Tabla1 = {
     colegio: "Colegio Alemán",
     periodo: "2024-3",
@@ -23,7 +23,7 @@ const EstudianteView = ({ user }) => {
             <img
               src={user?.profileImageUrl} // Asegúrate de que esta ruta sea correcta
               alt="Imagen"
-              className="w-[200px] h-[170px] "
+              className="w-[200px] h-[170px] object-cover"
             />
 
             {/* Contenedor para el texto a la derecha */}
@@ -65,11 +65,11 @@ const EstudianteView = ({ user }) => {
         </div>
       </div>
 
-      {/* <section className="mx-auto">
-  
+      <section className="mx-auto">
+
         <AcademicHistoryContainer courses={courses} />
 
-  
+
         <section className="mx-auto w-max rounded-lg border-brand-primary border py-2 px-8">
           <span className="text-brand-primary font-bold text-lg">
             Promedio del Periodo {average}
@@ -79,7 +79,7 @@ const EstudianteView = ({ user }) => {
         {
           courses && <TeacherCommentsSection courses={courses} />
         }
-      </section> */}
+      </section>
     </div>
   );
 }
