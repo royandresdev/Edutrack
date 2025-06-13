@@ -2,14 +2,20 @@ import { useEffect } from "react";
 import { getUserById } from "../pages/Estudiante/services";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../features/authSlice";
+import { DEMO_USER } from "../constants";
 
 const LOCAL_STORAGE_ID_KEY = "id";
 
 const useUser = () => {
-  const user = useSelector((state) => state.user);
+  const { user, status } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (status === "DEMO") {
+      dispatch(setUser(DEMO_USER));
+      return;
+    }
+
     if (!user || !user.id) return;
 
     const fetchUser = async () => {
@@ -26,7 +32,7 @@ const useUser = () => {
     if (!user.id) {
       fetchUser();
     }
-  }, [dispatch, user]);
+  }, [dispatch, user, status]);
 
   return { user, setUser };
 };
