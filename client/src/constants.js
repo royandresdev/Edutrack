@@ -13,6 +13,10 @@ export const ROLES = {
 export const DEMO_USER = {
   userId: "demo123",
   fullName: "Pedro Demo",
+  tutor: "Ana Demo",
+  period: "2025 - 2",
+  institution: "Colegio Demo",
+  grade: "11A Bachillerato",
   email: "demo@example.com",
   phoneNumber: "1234567890",
   role: ROLES.ESTUDIANTE,
