@@ -59,7 +59,7 @@ const EstudianteView = ({ user, courses, average }) => {
             <div className="font-bold">Teléfono Tutor</div>
 
             <div>{Tabla2.curso}</div>
-            {/* <div>{courses?.length}</div> */}
+            <div>{courses?.length}</div>
             <div>{user?.phoneNumber}</div>
           </div>
         </div>
