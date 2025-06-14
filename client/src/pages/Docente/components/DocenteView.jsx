@@ -11,28 +11,28 @@ const DocenteView = ({ user }) => {
         {/* Card izquierda */}
         <div className="card border border-brand-primary w-full flex">
           { /* Foto de perfil del docente */}
-          <img className="max-h-[174px] max-w-[200px]" src={profileImageUrl} alt="Perfil Docente" />
+          <img className="max-h-[174px] max-w-[200px] object-cover" src={profileImageUrl} alt="Perfil Docente" />
 
           {/* Datos personales */}
           <div className="p-10">
-            <p className="font-bold text-grey-1 text-h5 leading-4">Docente</p>
-            <p className="font-bold text-h4 text-brand-primary">{fullName}</p>
-            <p className="font-bold text-grey-1">ID <span className="text-brand-primary">{userId}</span></p>
+            <p className="font-bold text-grey-1 text-2xl leading-4">Docente</p>
+            <p className="font-bold text-3xl text-brand-primary">{fullName}</p>
+            <p className="font-bold text-xl text-grey-1">ID <span className="text-brand-primary">{userId}</span></p>
           </div>
         </div>
 
         {/* Card derecha */}
         <div className="card border border-brand-primary flex items-center px-6 justify-between">
           <div>
-            <p className="text-grey-1 font-bold">Institución</p>
+            <p className="text-grey-1 font-bold text-xl">Institución</p>
             <p>Colegio Alemán</p>
           </div>
           <div>
-            <p className="text-grey-1 font-bold">Periodo Actual</p>
+            <p className="text-grey-1 font-bold text-xl">Periodo Actual</p>
             <p>2024-3</p>
           </div>
           <div>
-            <p className="text-grey-1 font-bold">Asignaturas</p>
+            <p className="text-grey-1 font-bold text-xl">Asignaturas</p>
             <p>1</p>
           </div>
         </div>
@@ -40,9 +40,9 @@ const DocenteView = ({ user }) => {
 
       {/* Search Bar */}
       <div className="space-y-6 mb-6">
-        <h2 className="text-h3">Califique y Retroalimente a sus Estudiantes</h2>
+        <h2 className="text-4xl font-bold">Califique y Retroalimente a sus Estudiantes</h2>
         <GradeFilter subjects={subjects} />
-        <h3 className="text-h5 text-grey-1">2024-3 / Educación Física / 7A Bachillerato</h3>
+        <h3 className=" text-grey-1 text-2xl font-bold">2024-3 / Educación Física / 7A Bachillerato</h3>
       </div>
 
       {/* Lista de Estudiantes */}

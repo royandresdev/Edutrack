@@ -11,11 +11,11 @@ const StudentGradesTable = ({
     <div>
       {/* Header */}
       <div className="flex justify-between mb-[10px]">
-        <h3 className="text-h4">Lista de Estudiantes</h3>
+        <h3 className="text-3xl font-bold">Lista de Estudiantes</h3>
         {isRegistering ? (
           <div className="flex gap-2">
             <button
-              className="bg-brand-primary text-white-2 py-2 px-8 rounded-lg font-bold"
+              className="btn-primary px-8 font-bold"
               onClick={handleSaveGrades}
             >
               Guardar Cambios
@@ -41,16 +41,16 @@ const StudentGradesTable = ({
       <table className="w-full table-fixed">
         <thead>
           <tr>
-            <td className="text-black-1 font-bold bg-brand-secondary py-6 rounded-s-lg text-center">
+            <td className="text-xl text-black-1 font-bold bg-brand-secondary py-6 rounded-s-lg text-center">
               Estudiante
             </td>
-            <td className="text-black-1 font-bold bg-brand-secondary py-6 pl-20">
+            <td className="text-xl text-black-1 font-bold bg-brand-secondary py-6 pl-20">
               ID
             </td>
-            <td className="text-black-1 font-bold bg-brand-secondary py-6">
+            <td className="text-xl text-black-1 font-bold bg-brand-secondary py-6">
               Calificación
             </td>
-            <td className="text-black-1 font-bold bg-brand-secondary py-6 rounded-e-lg text-left">
+            <td className="text-xl text-black-1 font-bold bg-brand-secondary py-6 rounded-e-lg text-left">
               Comentario
             </td>
           </tr>
