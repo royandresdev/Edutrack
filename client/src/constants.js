@@ -19,6 +19,16 @@ export const DEMO_USER = {
   profileImageUrl: "/user_placeholder.webp",
 };
 
+export const DEMO_DOCENTE = {
+  fullName: "José Alba",
+  userId: 1124743862,
+  profileImageUrl: "/user_placeholder.webp",
+  email: "jose.alba@example.com",
+  phoneNumber: "9876543210",
+  role: ROLES.DOCENTE,
+  subjects: ["Educación Física", "Matemáticas", "Ciencias Naturales"],
+};
+
 export const DEMO_DASHBOARD = {
   Courses: [
     {

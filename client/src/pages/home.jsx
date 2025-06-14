@@ -56,10 +56,13 @@ function Home() {
                     {/* Content card */}
                     <div className="p-8">
                         <h2 className="text-3xl font-bold text-brand-primary mb-2">Docentes</h2>
-                        <p className="text-black-1">
+                        <p className="text-black-1 mb-2">
                             Evalúan el rendimiento de sus estudiantes y ofrecen
                             retroalimentación detallada sobre su progreso.
                         </p>
+                        <Link className="btn-primary" onClick={() => handleSetMood("DEMO")} to="/docente">
+                            Ver demo
+                        </Link>
                     </div>
                 </div>
 
