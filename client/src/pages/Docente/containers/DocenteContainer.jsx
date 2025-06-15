@@ -5,7 +5,7 @@ const DocenteContainer = () => {
   const { user } = useDocente();
 
   return (
-    user ? <DocenteView user={user} /> : <p>No se encontró información del docente.</p>
+    user && user.role === "DOCENTE" ? <DocenteView user={user} /> : <p>No se encontró información del docente.</p>
   )
 }
 export default DocenteContainer
