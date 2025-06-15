@@ -2,17 +2,17 @@ import { useEffect } from "react";
 import { getUserById } from "../pages/Estudiante/services";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../features/authSlice";
-import { DEMO_USER } from "../constants";
+import { DEMO_STUDENT } from "../constants";
 
 const LOCAL_STORAGE_ID_KEY = "id";
 
-const useUser = () => {
+const useStudent = () => {
   const { user, mood } = useSelector((state) => state?.authentication);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (mood === "DEMO" && !user) {
-      dispatch(setUser(DEMO_USER));
+      dispatch(setUser(DEMO_STUDENT));
     } else if (mood === "ONLINE") {
       const fetchUser = async () => {
         if (!user || !user.id) return;
@@ -37,4 +37,4 @@ const useUser = () => {
   return { user, setUser };
 };
 
-export default useUser;
+export default useStudent;

@@ -1,8 +1,8 @@
 import EstudianteView from "../components/EstudianteView";
-import { useDashboard, useUser } from "../../../hooks";
+import { useDashboard, useStudent } from "../../../hooks";
 
 const EstudianteContainer = () => {
-  const { user } = useUser();
+  const { user } = useStudent();
   const { average, dashboard } = useDashboard();
 
   return user?.userId ? (

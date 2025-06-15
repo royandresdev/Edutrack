@@ -1,3 +1,4 @@
+import { DEMO_PERIODS } from "../../../constants";
 import AcademicHistoryContainer from "../containers/AcademicHistoryContainer";
 import StudentDataTable from "./StudentDataTable";
 import TeacherCommentsSection from "./TeacherCommentsSection";
@@ -42,7 +43,7 @@ const EstudianteView = ({ user, courses, average }) => {
       </section>
 
       <section className="mx-auto">
-        <AcademicHistoryContainer courses={courses} />
+        <AcademicHistoryContainer courses={courses} listPeriod={DEMO_PERIODS} />
         <section className="mx-auto w-max rounded-lg border-brand-primary border py-2 px-8">
           <span className="text-brand-primary font-bold text-lg">
             Promedio del Periodo {average}
