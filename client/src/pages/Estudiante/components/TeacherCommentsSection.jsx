@@ -1,13 +1,11 @@
 import useDropdown from "../../../hooks/useDropdown";
 import CommentCard from "./CommentCard";
 
-const listPeriod = ["2024-3", "2024-2", "2024-1"];
-
-const TeacherCommentsSection = ({ courses }) => {
+const TeacherCommentsSection = ({ courses, listPeriod }) => {
   const { DropdownComponent: DropdownComentarios } = useDropdown(
     "Comentarios",
     "Comentarios",
-    listPeriod
+    listPeriod.map((period) => period.name),
   );
   return (
     <section>

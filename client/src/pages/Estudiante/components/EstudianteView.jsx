@@ -50,7 +50,7 @@ const EstudianteView = ({ user, courses, average }) => {
           </span>
         </section>
 
-        {courses && <TeacherCommentsSection courses={courses} />}
+        {courses && <TeacherCommentsSection courses={courses} listPeriod={DEMO_PERIODS} />}
       </section>
     </div>
   );
