@@ -10,9 +10,13 @@ export const ROLES = {
   DOCENTE: "DOCENTE",
 };
 
-export const DEMO_USER = {
+export const DEMO_STUDENT = {
   userId: "demo123",
   fullName: "Pedro Demo",
+  tutor: "Ana Demo",
+  period: "2025 - 1",
+  institution: "Colegio Demo",
+  grade: "11A Bachillerato",
   email: "demo@example.com",
   phoneNumber: "1234567890",
   role: ROLES.ESTUDIANTE,
@@ -28,6 +32,8 @@ export const DEMO_DOCENTE = {
   role: ROLES.DOCENTE,
   subjects: ["Educación Física", "Matemáticas", "Ciencias Naturales"],
 };
+
+export const DEMO_PERIODS = [{ id: 1, name: "2025 - 1" }];
 
 export const DEMO_DASHBOARD = {
   Courses: [

@@ -1,16 +1,15 @@
-/* import { useEffect, useState } from "react"; */
 import EstudianteView from "../components/EstudianteView";
-/* import { getDashboard } from "../services"; */
-import { useDashboard, useUser } from "../../../hooks";
+import { useDashboard, useStudent } from "../../../hooks";
 
 const EstudianteContainer = () => {
-  const { user } = useUser();
+  const { user } = useStudent();
   const { average, dashboard } = useDashboard();
 
-
-  return user || user?.id ? (
+  return user?.userId ? (
     <EstudianteView
-      user={user} courses={dashboard?.Courses} average={average}
+      user={user}
+      courses={dashboard?.Courses}
+      average={average}
     />
   ) : (
     <p>No se encontró información del usuario.</p>
