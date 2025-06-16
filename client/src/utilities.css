@@ -2,6 +2,22 @@
   @apply bg-brand-primary text-white-1 py-1 px-2 rounded-lg;
 }
 
+@utility dropdown {
+  @apply flex gap-4 bg-brand-primary font-bold text-white-2 px-8 py-2 rounded-lg items-center;
+}
+
+@utility dropdown-list {
+  @apply border border-brand-primary rounded-lg absolute left-0 right-0 mt-2 bg-white-2;
+
+  & > li {
+    @apply block py-4 px-8 text-brand-primary font-bold cursor-pointer;
+
+    &:hover {
+      @apply bg-brand-primary text-white-2;
+    }
+  }
+}
+
 @utility card {
   @apply bg-white-2 border border-brand-primary rounded-xl overflow-hidden;
 }

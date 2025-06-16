@@ -10,6 +10,8 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "outDir": "./dist",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
   },
   "include": ["src/**/*", "eslint.config.ts"],
   "exclude": ["node_modules"]

@@ -1,4 +1,4 @@
-import { DEMO_PERIODS } from "../../../constants";
+import { DEMO_PERIODS } from "../../../constants.js";
 import AcademicHistoryContainer from "../containers/AcademicHistoryContainer";
 import StudentDataTable from "./StudentDataTable";
 import TeacherCommentsSection from "./TeacherCommentsSection";
