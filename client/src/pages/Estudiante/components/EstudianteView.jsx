@@ -1,7 +1,7 @@
 import { DEMO_PERIODS } from "../../../constants.js";
-import AcademicHistoryContainer from "../containers/AcademicHistoryContainer";
+import AcademicHistoryContainer from "../containers/AcademicHistoryContainer.tsx";
 import StudentDataTable from "./StudentDataTable";
-import TeacherCommentsSection from "./TeacherCommentsSection";
+import TeacherCommentsSection from "./TeacherCommentsSection.tsx";
 
 const EstudianteView = ({ user, courses, average }) => {
   return (
