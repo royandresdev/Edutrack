@@ -30,6 +30,8 @@ export interface Period {
 }
 
 export interface Feedback {
+  id: string;
+  teacherResume: TeacherInFeedback;
   text: string;
   date: string;
 }
@@ -43,10 +45,18 @@ export interface Teacher {
   feedback: Feedback;
 }
 
-export interface Course {
+export interface TeacherInFeedback {
   id: string;
   name: string;
-  teachers: Teacher[];
+  subjectName: string;
+  profileImageUrl: string;
+}
+
+export interface Course {
+  id: string;
+  average: number;
+  name: string;
+  feedbacks: Feedback[];
 }
 
 export interface Notification {

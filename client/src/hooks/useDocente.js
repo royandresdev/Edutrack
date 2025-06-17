@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { decryptToken } from "../token";
 import { getDocenteById } from "../pages/Docente/services";
 import { setUser } from "../features/authSlice";
-import { DEMO_DOCENTE } from "../constants";
+import { DEMO_DOCENTE } from "../constants.ts";
 
 export default function useDocente() {
   const { user, mood } = useSelector((state) => state.authentication);

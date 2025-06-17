@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { getDashboard } from "../pages/Estudiante/services";
+import { getDashboard } from "../pages/Estudiante/services/index.js";
 import { useSelector } from "react-redux";
-import { DEMO_DASHBOARD } from "../constants";
+import { DEMO_DASHBOARD } from "../constants.ts";
+import { Dashboard } from "../types/index.ts";
 
 const useDashboard = () => {
   const { mood } = useSelector((state) => state.authentication);
-  const [dashboard, setDashboard] = useState(null);
+  const [dashboard, setDashboard] = useState<Dashboard>();
   const [average, setAverage] = useState(0);
 
   const fetchDashboard = async () => {
@@ -29,8 +30,7 @@ const useDashboard = () => {
     const calculateAverage = () => {
       if (dashboard?.Courses?.length) {
         const sum = dashboard.Courses.reduce(
-          (accumulator, currentValue) =>
-            accumulator + (currentValue.teachers[0]?.gradeValue || 0),
+          (accumulator, currentValue) => accumulator + currentValue.average,
           0
         );
         setAverage(Math.round(sum / dashboard.Courses.length));

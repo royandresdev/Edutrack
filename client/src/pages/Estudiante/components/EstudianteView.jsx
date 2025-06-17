@@ -1,4 +1,4 @@
-import { DEMO_PERIODS } from "../../../constants.js";
+import { DEMO_PERIODS } from "../../../constants.ts";
 import AcademicHistoryContainer from "../containers/AcademicHistoryContainer.tsx";
 import StudentDataTable from "./StudentDataTable";
 import TeacherCommentsSection from "./TeacherCommentsSection.tsx";
@@ -50,7 +50,7 @@ const EstudianteView = ({ user, courses, average }) => {
           </span>
         </section>
 
-        {courses && <TeacherCommentsSection courses={courses} listPeriod={DEMO_PERIODS} />}
+        {courses && <TeacherCommentsSection courses={courses} />}
       </section>
     </div>
   );

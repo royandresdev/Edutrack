@@ -1,16 +1,11 @@
-import useDropdown from "../../../hooks/useDropdown.tsx";
+import { Course } from "../../../types/index.ts";
 import CommentCard from "./CommentCard.jsx";
 
 interface TeacherCommentsSectionProps {
-  courses: { id: number; name: string }[];
-  listPeriod: { name: string }[];
+  courses: Course[];
 }
 
-const TeacherCommentsSection = ({ listPeriod }: TeacherCommentsSectionProps) => {
-  const { Component: DropdownComentarios } = useDropdown(
-    "Dropdown_Comentarios",
-    listPeriod.map((period) => period.name),
-  );
+const TeacherCommentsSection = ({ courses }: TeacherCommentsSectionProps) => {
   return (
     <section>
       <section className="space-y-4 pt-20 pb-10" >
@@ -23,6 +18,11 @@ const TeacherCommentsSection = ({ listPeriod }: TeacherCommentsSectionProps) => 
           detalladas sobre el desempeño, áreas de mejora y recomendaciones.
         </p>
       </section >
+      {
+        courses.map((course) => course.feedbacks.map((feedback) => (
+          <CommentCard key={feedback.id} feedback={feedback} />
+        )))
+      }
     </section>
   );
 };
