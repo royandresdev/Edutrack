@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { decryptToken, setToken } from "../token";
 import { useDispatch } from "react-redux";
-import { login } from "../features/authSlice";
+import { login } from "../features/authSlice.ts";
 
 const Login = () => {
   const dispatch = useDispatch();

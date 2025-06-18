@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { setMood } from "../features/authSlice";
+import { setMood } from "../features/authSlice.ts";
 import { useDispatch } from "react-redux";
 
 function Home() {
