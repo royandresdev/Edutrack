@@ -3,9 +3,10 @@ import { getDashboard } from "../pages/Estudiante/services/index.js";
 import { useSelector } from "react-redux";
 import { DEMO_DASHBOARD } from "../constants.ts";
 import { Dashboard } from "../types/index.ts";
+import { RootState } from "../app/store.ts";
 
 const useDashboard = () => {
-  const { mood } = useSelector((state) => state.authentication);
+  const { mood } = useSelector((state: RootState) => state.authentication);
   const [dashboard, setDashboard] = useState<Dashboard>();
   const [average, setAverage] = useState(0);
 

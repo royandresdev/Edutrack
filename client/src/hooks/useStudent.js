@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { getUserById } from "../pages/Estudiante/services";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../features/authSlice";
+import { setUser } from "../features/authSlice.ts";
 import { DEMO_STUDENT } from "../constants.ts";
 
 const LOCAL_STORAGE_ID_KEY = "id";

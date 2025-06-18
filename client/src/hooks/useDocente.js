@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { decryptToken } from "../token";
 import { getDocenteById } from "../pages/Docente/services";
-import { setUser } from "../features/authSlice";
+import { setUser } from "../features/authSlice.ts";
 import { DEMO_DOCENTE } from "../constants.ts";
 
 export default function useDocente() {
