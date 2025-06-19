@@ -57,6 +57,12 @@ export interface Course {
   average: number;
   name: string;
   feedbacks: Feedback[];
+  teacher?: TeacherInCourse;
+}
+
+interface TeacherInCourse {
+  id: string;
+  name: string;
 }
 
 export interface Notification {
