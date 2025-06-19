@@ -1,8 +1,9 @@
-import AcademicHistoryTable from "../components/AcademicHistoryTable.jsx";
+import AcademicHistoryTable from "../components/AcademicHistoryTable.tsx";
 import useDropdown from "../../../hooks/useDropdown.tsx";
+import { Course } from "../../../types/index.ts";
 
 interface AcademicHistoryContainerProps {
-  courses: { id: number; name: string }[];
+  courses: Course[];
   listPeriod: { name: string }[];
 }
 
@@ -12,7 +13,7 @@ const AcademicHistoryContainer = ({ courses, listPeriod }: AcademicHistoryContai
     listPeriod.map((period) => period.name),
   );
 
-  return <AcademicHistoryTable DropdownHistorial={DropdownHistorial} courses={courses} />;
+  return <AcademicHistoryTable DropdownHistorial={DropdownHistorial} Courses={courses} />;
 };
 
 export default AcademicHistoryContainer;

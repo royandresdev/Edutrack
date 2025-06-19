@@ -1,4 +1,12 @@
-const AcademicHistoryTable = ({ DropdownHistorial, courses }) => {
+import { FC, ReactNode } from "react";
+import { Course } from "../../../types/index.ts";
+
+interface AcademyHistoryTableProps {
+  DropdownHistorial: FC<{ children: ReactNode }>;
+  Courses: Course[];
+}
+
+const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial, Courses }) => {
   return (
     <div>
       {/* Encabezado historial académico */}
@@ -18,17 +26,14 @@ const AcademicHistoryTable = ({ DropdownHistorial, courses }) => {
         </thead>
         <tbody>
           {
-            courses?.map((course, index) =>
-              course?.teachers?.map(teacher => {
-                return (
-                  <tr className="even:bg-white-1 odd:bg-white-2" key={index}>
-                    <td className="py-[25px] px-[10px] pl-[200px]">{teacher.subjectName}</td>
-                    <td className="py-[25px] px-[10px]">{teacher.gradeValue}</td>
-                    <td className="py-[25px] px-[10px] pr-[200px]">{teacher.teacherName}</td>
-                  </tr>
-                )
-              })
-            )}
+            Courses?.map((course) => (
+              <tr className="even:bg-white-1 odd:bg-white-2" key={course.id}>
+                <td className="py-[25px] px-[10px] pl-[200px]">{course.name}</td>
+                <td className="py-[25px] px-[10px]">{course.average}</td>
+                <td className="py-[25px] px-[10px] pr-[200px]">{course.teacher?.name}</td>
+              </tr>
+            ))
+          }
         </tbody>
       </table>
     </div>
