@@ -1,10 +1,10 @@
 import AcademicHistoryTable from "../components/AcademicHistoryTable.tsx";
 import useDropdown from "../../../hooks/useDropdown.tsx";
-import { Course } from "../../../types/index.ts";
+import { Course, Period } from "../../../types/index.ts";
 
 interface AcademicHistoryContainerProps {
   courses: Course[];
-  listPeriod: { name: string }[];
+  listPeriod: Period[];
 }
 
 const AcademicHistoryContainer = ({ courses, listPeriod }: AcademicHistoryContainerProps) => {
