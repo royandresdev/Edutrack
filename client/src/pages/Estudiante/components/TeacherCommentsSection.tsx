@@ -18,11 +18,13 @@ const TeacherCommentsSection = ({ courses }: TeacherCommentsSectionProps) => {
           detalladas sobre el desempeño, áreas de mejora y recomendaciones.
         </p>
       </section >
-      {
-        courses.map((course) => course.feedbacks.map((feedback) => (
-          <CommentCard key={feedback.id} feedback={feedback} />
-        )))
-      }
+      <div className="grid grid-cols-2 gap-8">
+        {
+          courses.map((course) => course.feedbacks.map((feedback) => (
+            <CommentCard key={feedback.id} feedback={feedback} />
+          )))
+        }
+      </div>
     </section>
   );
 };
