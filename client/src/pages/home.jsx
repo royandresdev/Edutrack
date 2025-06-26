@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
-import { setMood } from "../features/authSlice.ts";
-import { useDispatch } from "react-redux";
 
 function Home() {
-    const dispatch = useDispatch();
-
-    const handleSetMood = (mood) => {
-        dispatch(setMood(mood));
-    };
-
     return (
         <div id="home" className="max-w-[1216px] mx-auto">
             {/* Encabezado */}
@@ -42,7 +34,7 @@ function Home() {
                             Acceden fácilmente a su historial académico y reciben
                             retroalimentación personalizada de sus docentes.
                         </p>
-                        <Link className="btn-primary" onClick={() => handleSetMood("DEMO")} to="/estudiante">
+                        <Link className="btn-primary" to="/estudiante">
                             Ver demo
                         </Link>
                     </div>
@@ -60,7 +52,7 @@ function Home() {
                             Evalúan el rendimiento de sus estudiantes y ofrecen
                             retroalimentación detallada sobre su progreso.
                         </p>
-                        <Link className="btn-primary" onClick={() => handleSetMood("DEMO")} to="/docente">
+                        <Link className="btn-primary" to="/docente">
                             Ver demo
                         </Link>
                     </div>

@@ -20,7 +20,7 @@ export interface Student extends User {
   grade: string;
 }
 
-export interface Docente extends User {
+export interface Teacher extends User {
   subjects: string[];
 }
 
@@ -34,15 +34,6 @@ export interface Feedback {
   teacherResume: TeacherInFeedback;
   text: string;
   date: string;
-}
-
-export interface Teacher {
-  id: string;
-  name: string;
-  grade: number;
-  subject: string;
-  profileImageUrl: string;
-  feedback: Feedback;
 }
 
 export interface TeacherInFeedback {

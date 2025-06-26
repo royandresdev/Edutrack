@@ -1,4 +1,4 @@
-import { Dashboard, Student } from "./types/index.ts";
+import { Dashboard, Student, Teacher } from "./types/index.ts";
 
 export const STATUS = {
   ONLINE: "ONLINE",
@@ -25,13 +25,13 @@ export const DEMO_STUDENT: Student = {
   grade: "11A Bachillerato",
 };
 
-export const DEMO_DOCENTE = {
+export const DEMO_DOCENTE: Teacher = {
   fullName: "José Alba",
-  userId: 1124743862,
+  id: "1124743862",
   profileImageUrl: "/user_placeholder.webp",
   email: "jose.alba@example.com",
-  phoneNumber: "9876543210",
-  role: ROLES.DOCENTE,
+  phone: "9876543210",
+  role: "DOCENTE",
   subjects: ["Educación Física", "Matemáticas", "Ciencias Naturales"],
 };
 
