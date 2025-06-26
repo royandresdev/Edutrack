@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { decryptToken } from "../token";
 import { getDocenteById } from "../pages/Docente/services";
-import { setUser } from "../features/authSlice.ts";
+import { handleSetUserDecoded } from "../features/authSlice.ts";
 import { DEMO_DOCENTE } from "../constants.ts";
 
 export default function useDocente() {
@@ -17,14 +17,14 @@ export default function useDocente() {
       console.log(userDataToken);
       try {
         const docenteFetchData = await getDocenteById(docenteId);
-        dispatch(setUser(docenteFetchData));
+        dispatch(handleSetUserDecoded(docenteFetchData));
       } catch (error) {
         console.log(error);
       }
     };
 
     if (mood === "DEMO" && user?.role !== "DOCENTE") {
-      dispatch(setUser(DEMO_DOCENTE));
+      dispatch(handleSetUserDecoded(DEMO_DOCENTE));
     } else if (!user && mood === "ONLINE") {
       handleGetDocenteData();
     }

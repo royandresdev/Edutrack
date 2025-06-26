@@ -1,26 +1,26 @@
 export type Status = "ONLINE" | "OFFLINE" | "DEMO";
 export type Roles = "TUTOR" | "ESTUDIANTE" | "DOCENTE";
 
-export interface Student {
+export interface DecodedToken {
+  id: string;
+}
+export interface User {
   id: string;
   fullName: string;
-  tutorId: string;
-  period: string;
-  institution: string;
-  grade: string;
   email: string;
   phone: string;
   role: Roles;
   profileImageUrl: string;
 }
 
-export interface Docente {
-  fullName: string;
-  id: string;
-  profileImageUrl: string;
-  email: string;
-  phone: string;
-  role: Roles;
+export interface Student extends User {
+  tutorId: string;
+  period: string;
+  institution: string;
+  grade: string;
+}
+
+export interface Docente extends User {
   subjects: string[];
 }
 

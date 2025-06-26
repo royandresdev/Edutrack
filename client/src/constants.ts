@@ -1,4 +1,4 @@
-import { Dashboard } from "./types/index.ts";
+import { Dashboard, Student } from "./types/index.ts";
 
 export const STATUS = {
   ONLINE: "ONLINE",
@@ -12,17 +12,17 @@ export const ROLES = {
   DOCENTE: "DOCENTE",
 };
 
-export const DEMO_STUDENT = {
-  userId: "demo123",
+export const DEMO_STUDENT: Student = {
+  id: "demo123",
   fullName: "Pedro Demo",
-  tutor: "Ana Demo",
+  email: "demo@example.com",
+  phone: "1234567890",
+  role: "ESTUDIANTE",
+  profileImageUrl: "/user_placeholder.webp",
+  tutorId: "tutor123",
   period: "2025 - 1",
   institution: "Colegio Demo",
   grade: "11A Bachillerato",
-  email: "demo@example.com",
-  phoneNumber: "1234567890",
-  role: ROLES.ESTUDIANTE,
-  profileImageUrl: "/user_placeholder.webp",
 };
 
 export const DEMO_DOCENTE = {
@@ -272,4 +272,8 @@ export const DEMO_DASHBOARD: Dashboard = {
       date: "2024-06-09",
     },
   ],
+};
+
+export const LOCAL_STORAGE_KEYS = {
+  LOCAL_STORAGE_ID_KEY: "ID",
 };

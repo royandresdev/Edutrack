@@ -1,18 +1,18 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { DecodedToken, User } from "../types/index.ts";
 
 export type Mood = "DEMO" | "ONLINE" | "OFFLINE" | null;
 
 interface AuthState {
   token: string | null;
-  user: any; // Replace 'any' with a more specific type if available
-  mood: Mood;
+  decodedToken: DecodedToken | null;
+  user: User | null;
 }
 
 const initialState: AuthState = {
   token: null,
   user: null,
-  mood: null,
+  decodedToken: null,
 };
 
 export const authSlice = createSlice({
@@ -25,15 +25,16 @@ export const authSlice = createSlice({
     logout: (state) => {
       state.token = null;
     },
-    setUser: (state, action: PayloadAction<any>) => {
-      state.user = action.payload;
+    handleSetDecodedToken: (state, action: PayloadAction<DecodedToken>) => {
+      state.decodedToken = action.payload;
     },
 
-    setMood: (state, action: PayloadAction<Mood>) => {
-      state.mood = action.payload;
+    handleSetUser: (state, action: PayloadAction<User | null>) => {
+      state.user = action.payload;
     },
   },
 });
 
-export const { login, logout, setUser, setMood } = authSlice.actions;
+export const { login, logout, handleSetDecodedToken, handleSetUser } =
+  authSlice.actions;
 export default authSlice.reducer;
