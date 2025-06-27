@@ -1,4 +1,4 @@
-import { Dashboard } from "./types/index.ts";
+import { Dashboard, Student, Teacher } from "./types/index.ts";
 
 export const STATUS = {
   ONLINE: "ONLINE",
@@ -12,33 +12,36 @@ export const ROLES = {
   DOCENTE: "DOCENTE",
 };
 
-export const DEMO_STUDENT = {
-  userId: "demo123",
+export const DEMO_STUDENT: Student = {
+  id: "demo123",
   fullName: "Pedro Demo",
-  tutor: "Ana Demo",
+  email: "demo@example.com",
+  phone: "1234567890",
+  role: "STUDENT",
+  profileImageUrl: "/user_placeholder.webp",
+  tutorResume: {
+    id: "tutor123",
+    fullName: "María Demo",
+  },
   period: "2025 - 1",
   institution: "Colegio Demo",
   grade: "11A Bachillerato",
-  email: "demo@example.com",
-  phoneNumber: "1234567890",
-  role: ROLES.ESTUDIANTE,
-  profileImageUrl: "/user_placeholder.webp",
 };
 
-export const DEMO_DOCENTE = {
+export const DEMO_DOCENTE: Teacher = {
   fullName: "José Alba",
-  userId: 1124743862,
+  id: "1124743862",
   profileImageUrl: "/user_placeholder.webp",
   email: "jose.alba@example.com",
-  phoneNumber: "9876543210",
-  role: ROLES.DOCENTE,
+  phone: "9876543210",
+  role: "TEACHER",
   subjects: ["Educación Física", "Matemáticas", "Ciencias Naturales"],
 };
 
 export const DEMO_PERIODS = [{ id: 1, name: "2025 - 1" }];
 
 export const DEMO_DASHBOARD: Dashboard = {
-  Courses: [
+  courses: [
     {
       id: "101",
       name: "Matemáticas",
@@ -272,4 +275,8 @@ export const DEMO_DASHBOARD: Dashboard = {
       date: "2024-06-09",
     },
   ],
+};
+
+export const LOCAL_STORAGE_KEYS = {
+  LOCAL_STORAGE_ID_KEY: "ID",
 };

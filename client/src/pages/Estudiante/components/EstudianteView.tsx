@@ -1,9 +1,16 @@
-import { DEMO_PERIODS } from "../../../constants.ts";
+import { FC } from "react";
+import { Dashboard, Student } from "../../../types/index.ts";
 import AcademicHistoryContainer from "../containers/AcademicHistoryContainer.tsx";
-import StudentDataTable from "./StudentDataTable";
+import StudentDataTable from "./StudentDataTable.jsx";
 import TeacherCommentsSection from "./TeacherCommentsSection.tsx";
 
-const EstudianteView = ({ user, courses, average }) => {
+interface EstudianteViewProps {
+  student: Student;
+  dashboard: Dashboard;
+  average: number;
+}
+
+const EstudianteView: FC<EstudianteViewProps> = ({ student, dashboard, average }) => {
   return (
     <div className="max-w-[1281px] mx-auto">
       <section className="py-10 sm:py-10">
@@ -11,17 +18,17 @@ const EstudianteView = ({ user, courses, average }) => {
           {/* Contenedor Izquierdo (Card 1) */}
           <div className="w-[592px] h-[174px] p-1 flex items-center card">
             <img
-              src={user?.profileImageUrl}
-              alt={`Imagen del perfil del estudiante ${user?.fullName}`}
+              src={student?.profileImageUrl}
+              alt={`Imagen del perfil del estudiante ${student?.fullName}`}
               className="w-[200px] h-[170px] object-cover"
             />
             <div className="p-4 flex-1 text-left">
               <h2 className="text-[24px] font-bold text-black">Estudiante</h2>
               <p className="text-[32px] text-brand-primary font-bold">
-                {user?.fullName}
+                {student?.fullName}
               </p>
               <p className="font-bold">
-                ID: <span className="text-brand-primary">{user?.userId}</span>
+                ID: <span className="text-brand-primary">{student?.id}</span>
               </p>
             </div>
           </div>
@@ -30,12 +37,12 @@ const EstudianteView = ({ user, courses, average }) => {
           <div className="w-full lg:w-[592px] min-h-[174px] card p-4">
             <StudentDataTable
               rows={[
-                { header: "Institución", data: user?.institution },
-                { header: "Periodo Actual", data: user?.period },
-                { header: "Tutor", data: user?.tutor },
-                { header: "Curso", data: user?.grade },
-                { header: "Asignaturas", data: courses?.length },
-                { header: "Correo", data: user?.email },
+                { header: "Institución", data: student?.institution },
+                { header: "Periodo Actual", data: student?.period },
+                { header: "Tutor", data: student?.tutorResume.fullName },
+                { header: "Curso", data: student?.grade },
+                { header: "Asignaturas", data: dashboard?.courses.length },
+                { header: "Correo", data: student?.email },
               ]}
             />
           </div>
@@ -43,14 +50,8 @@ const EstudianteView = ({ user, courses, average }) => {
       </section>
 
       <section className="mx-auto">
-        <AcademicHistoryContainer courses={courses} listPeriod={DEMO_PERIODS} />
-        <section className="mx-auto w-max rounded-lg border-brand-primary border py-2 px-8">
-          <span className="text-brand-primary font-bold text-lg">
-            Promedio del Periodo {average}
-          </span>
-        </section>
-
-        {courses && <TeacherCommentsSection courses={courses} />}
+        <AcademicHistoryContainer courses={dashboard.courses} average={average} />
+        <TeacherCommentsSection courses={dashboard.courses} />
       </section>
     </div>
   );

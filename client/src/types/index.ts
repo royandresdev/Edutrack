@@ -1,26 +1,29 @@
 export type Status = "ONLINE" | "OFFLINE" | "DEMO";
-export type Roles = "TUTOR" | "ESTUDIANTE" | "DOCENTE";
+export type Roles = "TUTOR" | "STUDENT" | "TEACHER";
 
-export interface Student {
+export interface DecodedToken {
+  id: string;
+}
+export interface User {
   id: string;
   fullName: string;
-  tutorId: string;
-  period: string;
-  institution: string;
-  grade: string;
   email: string;
   phone: string;
   role: Roles;
   profileImageUrl: string;
 }
 
-export interface Docente {
-  fullName: string;
-  id: string;
-  profileImageUrl: string;
-  email: string;
-  phone: string;
-  role: Roles;
+export interface Student extends User {
+  tutorResume: {
+    id: string;
+    fullName: string;
+  };
+  period: string;
+  institution: string;
+  grade: string;
+}
+
+export interface Teacher extends User {
   subjects: string[];
 }
 
@@ -34,15 +37,6 @@ export interface Feedback {
   teacherResume: TeacherInFeedback;
   text: string;
   date: string;
-}
-
-export interface Teacher {
-  id: string;
-  name: string;
-  grade: number;
-  subject: string;
-  profileImageUrl: string;
-  feedback: Feedback;
 }
 
 export interface TeacherInFeedback {
@@ -72,6 +66,6 @@ export interface Notification {
 }
 
 export interface Dashboard {
-  Courses: Course[];
+  courses: Course[];
   notifications: Notification[];
 }
