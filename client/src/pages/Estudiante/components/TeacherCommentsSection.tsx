@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Course } from "../../../types/index.ts";
 import CommentCard from "./CommentCard.jsx";
 
@@ -5,7 +6,7 @@ interface TeacherCommentsSectionProps {
   courses: Course[];
 }
 
-const TeacherCommentsSection = ({ courses }: TeacherCommentsSectionProps) => {
+const TeacherCommentsSection: FC<TeacherCommentsSectionProps> = ({ courses }) => {
   return (
     <section>
       <section className="space-y-4 pt-20 pb-10" >
@@ -20,7 +21,7 @@ const TeacherCommentsSection = ({ courses }: TeacherCommentsSectionProps) => {
       </section >
       <div className="grid grid-cols-2 gap-8">
         {
-          courses ? courses.map((course) => course.feedbacks.map((feedback) => (
+          courses ? courses.flatMap((course) => course.feedbacks.map((feedback) => (
             <CommentCard key={feedback.id} feedback={feedback} />
           ))) : <p>No hay comentarios disponibles.</p>
         }
