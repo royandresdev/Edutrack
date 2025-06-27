@@ -14,7 +14,7 @@ const AcademicHistoryContainer: FC<AcademicHistoryContainerProps> = ({ courses, 
     DEMO_PERIODS.map((period) => period.name),
   );
 
-  return courses ? (
+  return courses && courses.length > 0 ? (
     <AcademicHistoryTable
       DropdownHistorial={DropdownHistorial}
       courses={courses}
