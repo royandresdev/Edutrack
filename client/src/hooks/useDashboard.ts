@@ -20,6 +20,12 @@ const useDashboard = () => {
         }
         const dashboardData = await getDashboard(decodedToken.id);
         setDashboard(dashboardData);
+        setAverage(
+          dashboardData.courses.reduce(
+            (acc, course) => acc + course.average,
+            0
+          ) / dashboardData.courses.length
+        );
       } catch (error) {
         console.error("Error al obtener el dashboard:", error);
         throw new Error("Error al obtener el dashboard: " + error);
