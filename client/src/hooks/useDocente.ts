@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DEMO_DOCENTE } from "../constants.ts";
 import { RootState } from "../app/store.ts";
-import { getDocenteById } from "../pages/Docente/services/index.js";
 import { handleSetUser } from "../features/authSlice.ts";
+import { getTeacherById } from "../services/teacher.ts";
 
 export default function useDocente() {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +21,7 @@ export default function useDocente() {
         if (!decodedToken?.id) {
           throw new Error("ID del token no encontrado");
         }
-        const userData = await getDocenteById(decodedToken.id);
+        const userData = await getTeacherById(decodedToken.id);
         dispatch(handleSetUser(userData));
       } catch (error) {
         setError("Error al obtener el usuario: " + error);
