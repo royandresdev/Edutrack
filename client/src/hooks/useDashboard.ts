@@ -28,7 +28,8 @@ const useDashboard = () => {
         );
       } catch (error) {
         console.error("Error al obtener el dashboard:", error);
-        throw new Error("Error al obtener el dashboard: " + error);
+        setDashboard(null); // Optionally reset the dashboard state
+        setAverage(0); // Optionally reset the average state
       }
     };
 
