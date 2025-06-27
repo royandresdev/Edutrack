@@ -17,9 +17,12 @@ export const DEMO_STUDENT: Student = {
   fullName: "Pedro Demo",
   email: "demo@example.com",
   phone: "1234567890",
-  role: "ESTUDIANTE",
+  role: "STUDENT",
   profileImageUrl: "/user_placeholder.webp",
-  tutorId: "tutor123",
+  tutorResume: {
+    id: "tutor123",
+    fullName: "María Demo",
+  },
   period: "2025 - 1",
   institution: "Colegio Demo",
   grade: "11A Bachillerato",
@@ -31,14 +34,14 @@ export const DEMO_DOCENTE: Teacher = {
   profileImageUrl: "/user_placeholder.webp",
   email: "jose.alba@example.com",
   phone: "9876543210",
-  role: "DOCENTE",
+  role: "TEACHER",
   subjects: ["Educación Física", "Matemáticas", "Ciencias Naturales"],
 };
 
 export const DEMO_PERIODS = [{ id: 1, name: "2025 - 1" }];
 
 export const DEMO_DASHBOARD: Dashboard = {
-  Courses: [
+  courses: [
     {
       id: "101",
       name: "Matemáticas",

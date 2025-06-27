@@ -20,9 +20,9 @@ const TeacherCommentsSection = ({ courses }: TeacherCommentsSectionProps) => {
       </section >
       <div className="grid grid-cols-2 gap-8">
         {
-          courses.map((course) => course.feedbacks.map((feedback) => (
+          courses ? courses.map((course) => course.feedbacks.map((feedback) => (
             <CommentCard key={feedback.id} feedback={feedback} />
-          )))
+          ))) : <p>No hay comentarios disponibles.</p>
         }
       </div>
     </section>

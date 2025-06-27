@@ -1,20 +1,26 @@
 import AcademicHistoryTable from "../components/AcademicHistoryTable.tsx";
 import useDropdown from "../../../hooks/useDropdown.tsx";
-import { Course, Period } from "../../../types/index.ts";
+import { DEMO_PERIODS } from "../../../constants.ts";
 import { FC } from "react";
+import { Course } from "../../../types/index.ts";
 
 interface AcademicHistoryContainerProps {
   courses: Course[];
-  listPeriod: Period[];
+  average: number;
 }
-
-const AcademicHistoryContainer: FC<AcademicHistoryContainerProps> = ({ courses, listPeriod }) => {
+const AcademicHistoryContainer: FC<AcademicHistoryContainerProps> = ({ courses, average }) => {
   const { Component: DropdownHistorial } = useDropdown(
     "Dropdown_Historial",
-    listPeriod.map((period) => period.name),
+    DEMO_PERIODS.map((period) => period.name),
   );
 
-  return <AcademicHistoryTable DropdownHistorial={DropdownHistorial} Courses={courses} />;
+  return courses ? (
+    <AcademicHistoryTable
+      DropdownHistorial={DropdownHistorial}
+      courses={courses}
+      average={average}
+    />
+  ) : <p>No se encontró información del historial académico.</p>;
 };
 
 export default AcademicHistoryContainer;

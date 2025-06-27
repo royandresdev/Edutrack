@@ -1,5 +1,5 @@
 export type Status = "ONLINE" | "OFFLINE" | "DEMO";
-export type Roles = "TUTOR" | "ESTUDIANTE" | "DOCENTE";
+export type Roles = "TUTOR" | "STUDENT" | "TEACHER";
 
 export interface DecodedToken {
   id: string;
@@ -14,7 +14,10 @@ export interface User {
 }
 
 export interface Student extends User {
-  tutorId: string;
+  tutorResume: {
+    id: string;
+    fullName: string;
+  };
   period: string;
   institution: string;
   grade: string;
@@ -63,6 +66,6 @@ export interface Notification {
 }
 
 export interface Dashboard {
-  Courses: Course[];
+  courses: Course[];
   notifications: Notification[];
 }

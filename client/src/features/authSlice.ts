@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { DecodedToken, User } from "../types/index.ts";
+import { DecodedToken, Student, Teacher } from "../types/index.ts";
 
 export type Mood = "DEMO" | "ONLINE" | "OFFLINE" | null;
 
 interface AuthState {
   token: string | null;
   decodedToken: DecodedToken | null;
-  user: User | null;
+  user: Teacher | Student | null;
 }
 
 const initialState: AuthState = {
@@ -29,7 +29,7 @@ export const authSlice = createSlice({
       state.decodedToken = action.payload;
     },
 
-    handleSetUser: (state, action: PayloadAction<User | null>) => {
+    handleSetUser: (state, action: PayloadAction<Student | Teacher | null>) => {
       state.user = action.payload;
     },
   },

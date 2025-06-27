@@ -3,10 +3,11 @@ import { Course } from "../../../types/index.ts";
 
 interface AcademyHistoryTableProps {
   DropdownHistorial: FC<{ children: ReactNode }>;
-  Courses: Course[];
+  courses: Course[];
+  average: number;
 }
 
-const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial, Courses }) => {
+const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial, courses, average }) => {
   return (
     <div>
       {/* Encabezado historial académico */}
@@ -26,7 +27,7 @@ const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial,
         </thead>
         <tbody>
           {
-            Courses?.map((course) => (
+            courses?.map((course) => (
               <tr className="even:bg-white-1 odd:bg-white-2" key={course.id}>
                 <td className="py-[25px] px-[10px] pl-[200px]">{course.name}</td>
                 <td className="py-[25px] px-[10px]">{course.average}</td>
@@ -36,6 +37,12 @@ const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial,
           }
         </tbody>
       </table>
+
+      <section className="mx-auto w-max rounded-lg border-brand-primary border py-2 px-8">
+        <span className="text-brand-primary font-bold text-lg">
+          Promedio del Periodo {average}
+        </span>
+      </section>
     </div>
   )
 }

@@ -4,15 +4,14 @@ import { DEMO_STUDENT } from "../constants.ts";
 import { RootState } from "../app/store.ts";
 import { getStudentById } from "../services/student.ts";
 import { handleSetUser } from "../features/authSlice.ts";
+import { Student } from "../types/index.ts";
 
 const useStudent = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const {
-    token,
-    decodedToken,
-    user: student,
-  } = useSelector((state: RootState) => state?.authentication);
+  const { token, decodedToken, user } = useSelector(
+    (state: RootState) => state?.authentication
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,6 +38,8 @@ const useStudent = () => {
 
     handleGetUser();
   }, [token, decodedToken, dispatch]);
+
+  const student = user as Student;
 
   return { student, isLoading, error };
 };
