@@ -1,5 +1,10 @@
 @utility btn-primary {
-  @apply bg-brand-primary text-white-1 py-1 px-2 rounded-lg;
+  @apply bg-brand-primary text-white-1 py-1 px-2 rounded-xl shadow-lg;
+  transition: all 0.3s ease;
+
+  &:hover {
+    @apply shadow-xl scale-105;
+  }
 }
 
 @utility dropdown {

@@ -1,30 +1,18 @@
-import { useSelector } from 'react-redux'
-import { Link } from "react-router-dom";
-
 const Header = () => {
-  const { token, user } = useSelector((state) => state?.authentication);
-
   return (
-    <div className="py-[15.3px] px-[28.778px] flex justify-between items-center bg-white">
-      <div className="h-[57px]">
-        <Link to='/'>
-          <img
-            src="/Logo.svg"
-            alt="Logo Edutrack"
-            className="h-[48px] w-[192px]"
-          />
-        </Link>
+    <header className="max-w-7xl mx-auto py-6 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 flex items-center justify-center">
+            <img src="/Logo.svg" alt="EduTrack Logo" />
+          </div>
+          <h1 className="text-2xl">
+            <span className="text-purple-900 font-bold">Edu</span>
+            <span className="text-gray-400">Track</span>
+          </h1>
+        </div>
       </div>
-      {
-        token && user ? (
-          <button className='flex items-center text-brand-primary font-bold gap-4 border border-brand-primary rounded-lg px-8 py-2'>
-            <img src="/user.svg" alt="user icon" /> {user?.fullName} <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 11L14 17L20 11" stroke="#722b76" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        ) : <></>
-      }
-    </div>
+    </header>
   );
 };
 export default Header;
