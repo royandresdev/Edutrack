@@ -48,9 +48,9 @@ function Home() {
 
             {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-20 mb-[208px]">
-                {userCardsData.map((card, index) => (
+                {userCardsData.map((card) => (
                     <UserPreviewCard
-                        key={index}
+                        key={card.linkTo}
                         title={card.title}
                         description={card.description}
                         imageSrc={card.imageSrc}
@@ -76,7 +76,7 @@ const UserPreviewCard: FC<UserPreviewCardProps> = ({ title, description, imageSr
         <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             {/* Image card */}
             <div className="w-full h-[232px] bg-[#6B6969]">
-                <img className="object-cover w-full h-full" src={imageSrc} alt={title} />
+                <img className="object-cover w-full h-full" src={imageSrc} alt={`Imagen representativa de ${title}`} />
             </div>
             {/* Content card */}
             <div className="p-8 space-y-4">
@@ -89,11 +89,9 @@ const UserPreviewCard: FC<UserPreviewCardProps> = ({ title, description, imageSr
                 <p className="text-black-1 min-h-[4.5rem] leading-relaxed">
                     {description}
                 </p>
-                {linkTo && (
-                    <Link className="flex items-center justify-center w-full bg-brand-primary hover:bg-brand-primary-dark text-white py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg" to={linkTo}>
-                        Ver demo
-                    </Link>
-                )}
+                <Link className="flex items-center justify-center w-full bg-brand-primary hover:bg-brand-primary-dark text-white py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg" to={linkTo}>
+                    Ver demo
+                </Link>
             </div>
         </div>
     );

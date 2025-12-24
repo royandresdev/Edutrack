@@ -4,7 +4,6 @@
 
   &:hover {
     @apply shadow-xl scale-105;
-    transition: all 0.3s ease;
   }
 }
 
