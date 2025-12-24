@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/home"
+import Home from "../pages/home.tsx"
 import { Estudiante, Docente } from "../pages";
 import Header from '../components/Header'
 import Footer from '../components/Footer'

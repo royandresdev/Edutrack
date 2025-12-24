@@ -4,6 +4,7 @@
 @import "./utilities.css";
 @theme {
   --color-brand-primary: #722b76;
+  --color-brand-primary-dark: #5a215e;
   --color-brand-secondary: #ebe2fa;
   --color-state-info: #a3c1da;
   --color-state-success: #5cb85c;
