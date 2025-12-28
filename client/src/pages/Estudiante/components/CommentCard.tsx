@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Feedback } from "../../../types/index.ts"
+import { Calendar, User } from "lucide-react";
 
 interface CommentCardProps {
   feedback: Feedback;
@@ -7,18 +8,19 @@ interface CommentCardProps {
 
 const CommentCard: FC<CommentCardProps> = ({ feedback }) => {
   return (
-    <div className="card border w-full border-brand-primary space-y-[13px] py-8 px-6 rounded-[22px] mx-auto bg-white">
+    <div className="bg-gradient-to-br bg-gray-50 rounded-xl p-5 border border-purple-100 hover:shadow-md hover:border-purple-200 transition-all duration-200 group">
       {/* Info del docente */}
       <div className="flex gap-[15px] items-center">
-        <div className="size-[66px] rounded-lg border border-brand-primary bg-gray-300 overflow-hidden">
-          <img src={feedback?.teacherResume?.profileImageUrl} alt="Foto del perfil del docente" />
+        <div className="size-12 rounded-full from-brand-primary to-brand-primary-dark bg-gradient-to-br flex items-center justify-center">
+          <User className="size-6 text-white" />
         </div>
-        <div className="space-y-2">
-          <p className="text-xl font-bold text-brand-primary">{feedback?.teacherResume?.name}</p>
-          <p className="text-grey-1 font-bold">
-            {feedback?.teacherResume?.subjectName} <br />
-            {feedback?.date}
-          </p>
+        <div>
+          <p className="font-bold text-black-2">{feedback?.teacherResume?.name}</p>
+          <div className="text-brand-primary">
+            <p className="text-sm text-brand-primary flex items-center gap-2">
+              <span className="font-semibold">{feedback?.teacherResume?.subjectName}</span> • <Calendar className="inline-block size-3" /> {feedback?.date}
+            </p>
+          </div>
         </div>
       </div>
 

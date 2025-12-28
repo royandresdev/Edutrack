@@ -8,7 +8,7 @@
 }
 
 @utility dropdown {
-  @apply flex gap-4 bg-brand-primary font-bold text-white-2 px-8 py-2 rounded-lg items-center;
+  @apply flex gap-4 bg-brand-primary font-bold text-white-2 px-6 py-3 rounded-xl items-center;
 }
 
 @utility dropdown-list {
