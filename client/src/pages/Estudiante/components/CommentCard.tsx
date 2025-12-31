@@ -14,20 +14,19 @@ const CommentCard: FC<CommentCardProps> = ({ feedback }) => {
         <div className="size-12 rounded-full from-brand-primary to-brand-primary-dark bg-gradient-to-br flex items-center justify-center">
           <User className="size-6 text-white" />
         </div>
-        <div>
+        <div className="space-y-1">
           <p className="font-bold text-black-2">{feedback?.teacherResume?.name}</p>
           <div className="text-brand-primary">
             <p className="text-sm text-brand-primary flex items-center gap-2">
               <span className="font-semibold">{feedback?.teacherResume?.subjectName}</span> • <Calendar className="inline-block size-3" /> {feedback?.date}
             </p>
           </div>
+          {/* Comentario */}
+          <p className="text-black-2">
+            {feedback?.text}
+          </p>
         </div>
       </div>
-
-      {/* Comentario */}
-      <p className="text-black-2">
-        {feedback?.text}
-      </p>
     </div>
   )
 }
