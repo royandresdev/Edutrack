@@ -45,7 +45,7 @@ const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial,
                         'text-red-600'
                   }
                   `}>
-                  <span className="sm:hidden text-brand-primary font-semibold min-w-[100px] inline-block">Calificación:</span>   {course.average}
+                  <span className="sm:hidden text-brand-primary font-semibold min-w-[100px] inline-block">Calificación:</span> {course.average}
                 </td>
                 <td className="table-cell">
                   <span className="sm:hidden text-brand-primary font-semibold min-w-[100px] inline-block">Docente:</span> {course.teacher?.name}
