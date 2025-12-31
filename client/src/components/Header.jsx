@@ -2,7 +2,7 @@ const Header = () => {
   return (
     <header className="max-w-7xl mx-auto py-6 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <a href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2" aria-label="Navigate to homepage">
           <div className="w-8 h-8 flex items-center justify-center">
             <img src="/Logo.svg" alt="EduTrack Logo" />
           </div>
