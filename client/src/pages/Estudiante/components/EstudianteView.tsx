@@ -22,7 +22,7 @@ const EstudianteView: FC<EstudianteViewProps> = ({ student, dashboard, average }
               <User className="w-10 h-10 text-white" />
             </div>
             <div className="p-4 flex-1 text-left">
-              <p className="text-2xl text-black-2-primary font-bold">
+              <p className="text-2xl text-black-2 font-bold">
                 {student?.fullName}
               </p>
               <p className="text-brand-primary">
