@@ -56,7 +56,7 @@ const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial,
         </tbody>
       </table>
 
-      <section className="mx-auto w-max rounded-xl bg-brand-primary py-4 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
+      <section className="mx-auto w-max rounded-xl bg-brand-primary py-4 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
         <p className="text-white font-bold text-lg flex items-center gap-2">
           <Award className="size-6" /> Promedio del Periodo {average}
         </p>
