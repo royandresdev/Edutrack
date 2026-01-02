@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Course } from "../../../types/index.ts";
 import CommentCard from "./CommentCard.jsx";
+import { MessageSquare } from "lucide-react";
 
 interface TeacherCommentsSectionProps {
   courses: Course[];
@@ -8,10 +9,12 @@ interface TeacherCommentsSectionProps {
 
 const TeacherCommentsSection: FC<TeacherCommentsSectionProps> = ({ courses }) => {
   return (
-    <section>
-      <section className="space-y-4 pt-20 pb-10" >
-        <h2 className="text-h3 font-bold text-center">
-          Comentarios de los docentes
+    <section className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border border-purple-100">
+      <section className="space-y-4 mb-6" >
+        <h2 className="text-2xl font-bold text-left">
+          <div className="size-10 rounded-xl bg-brand-primary inline-flex items-center justify-center mr-3">
+            <MessageSquare className="text-white size-5" />
+          </div> Comentarios de los docentes
         </h2>
         <p className="text-center max-w-[816px] m-auto">
           En esta sección encontrará los comentarios y la retroalimentación
@@ -19,7 +22,7 @@ const TeacherCommentsSection: FC<TeacherCommentsSectionProps> = ({ courses }) =>
           detalladas sobre el desempeño, áreas de mejora y recomendaciones.
         </p>
       </section >
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {
           courses ? courses.flatMap((course) => course.feedbacks.map((feedback) => (
             <CommentCard key={feedback.id} feedback={feedback} />
