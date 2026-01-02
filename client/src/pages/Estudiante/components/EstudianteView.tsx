@@ -34,7 +34,7 @@ const EstudianteView: FC<EstudianteViewProps> = ({ student, dashboard, average }
           {/* Contenedor Derecho (Card 2) */}
           <div className="w-full lg:w-2/3 p-4">
             <StudentDataTable
-              data={[
+              fields={[
                 { title: "Institución", data: student?.institution },
                 { title: "Periodo Actual", data: student?.period },
                 { title: "Tutor", data: student?.tutorResume.fullName },
