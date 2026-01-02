@@ -35,10 +35,10 @@ const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial,
           {
             courses?.map((course) => (
               <tr className="flex flex-col sm:table-row gap-2 rounded-xl text-left bg-gray-50 p-4" key={course.id}>
-                <td className="table-cell sm:pl-4 sm:py-4">
+                <td className="sm:table-cell sm:pl-4 sm:py-4">
                   <span className="sm:hidden text-brand-primary font-semibold min-w-[100px] inline-block">Asignatura:</span> {course.name}
                 </td>
-                <td className={`table-cell font-bold sm:text-center
+                <td className={`sm:table-cell font-bold sm:text-center
                    ${course.average >= 90 ? 'text-green-600' :
                     course.average >= 80 ? 'text-blue-600' :
                       course.average >= 70 ? 'text-orange-600' :
@@ -47,7 +47,7 @@ const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial,
                   `}>
                   <span className="sm:hidden text-brand-primary font-semibold min-w-[100px] inline-block">Calificación:</span> {course.average}
                 </td>
-                <td className="table-cell">
+                <td className="sm:table-cell">
                   <span className="sm:hidden text-brand-primary font-semibold min-w-[100px] inline-block">Docente:</span> {course.teacher?.name}
                 </td>
               </tr>
