@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Estudiante, Docente, Home } from "../pages/index.ts";
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
-import Login from '../pages/login.jsx'
+import Login from '../pages/Login/login.jsx'
 import { Toaster } from "sonner";
 
 function MyRoutes() {

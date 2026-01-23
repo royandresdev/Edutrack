@@ -1,11 +1,11 @@
-import { EyeIcon } from "../assets/icon/icon";
-import { EyeIcon2 } from "../assets/icon/icon2";
+import { EyeIcon } from "../../assets/icon/icon.jsx";
+import { EyeIcon2 } from "../../assets/icon/icon2.jsx";
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { decryptToken, setToken } from "../token";
+import { decryptToken, setToken } from "../../token.jsx";
 import { useDispatch } from "react-redux";
-import { login } from "../features/authSlice.ts";
+import { login } from "../../features/authSlice.ts";
 
 const Login = () => {
   const dispatch = useDispatch();
