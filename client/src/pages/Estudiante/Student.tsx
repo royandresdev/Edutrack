@@ -9,10 +9,9 @@ const Student = () => {
   const { student, dashboard } = useContext(StudentContext);
 
   return (
-    <div className="max-w-7xl py-8 px-6 md:px-12 mx-auto space-y-6">
+    <main className="max-w-7xl py-8 px-6 md:px-12 mx-auto space-y-6">
       <section>
         <div className="flex flex-col lg:flex-row gap-2 justify-between bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border border-purple-100">
-          {/* Contenedor Izquierdo (Card 1) */}
           <div className="p-1 flex items-center">
             <div className="w-20 h-20 bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-full flex items-center justify-center shadow-lg">
               <User className="w-10 h-10 text-white" />
@@ -27,7 +26,6 @@ const Student = () => {
             </div>
           </div>
 
-          {/* Contenedor Derecho (Card 2) */}
           <div className="w-full lg:w-2/3 p-4">
             <StudentDataTable
               fields={[
@@ -47,7 +45,7 @@ const Student = () => {
         {dashboard && <AcademicHistoryContainer courses={dashboard.courses} average={dashboard.average} />}
         {dashboard && <TeacherCommentsSection courses={dashboard.courses} />}
       </section>
-    </div>
+    </main>
   );
 };
 
