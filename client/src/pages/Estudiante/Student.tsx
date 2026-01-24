@@ -1,4 +1,4 @@
-import AcademicHistoryContainer from "./containers/AcademicHistoryContainer.tsx";
+import AcademicHistoryContainer from "./components/AcademicHistoryTable.tsx";
 import StudentDataTable from "./components/StudentDataTable.tsx";
 import TeacherCommentsSection from "./components/TeacherCommentsSection.tsx";
 import { User } from "lucide-react";

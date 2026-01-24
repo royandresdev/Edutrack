@@ -1,26 +1,24 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Course } from "../../../types/index.ts";
 import { Award, BookOpen } from "lucide-react";
 
-interface AcademyHistoryTableProps {
-  DropdownHistorial: FC<{ children: ReactNode }>;
+interface AcademicHistoryTableProps {
   courses: Course[];
   average: number;
 }
 
-const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial, courses, average }) => {
+const AcademicHistoryTable: FC<AcademicHistoryTableProps> = ({ courses, average }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border border-purple-100">
+    <section className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border border-purple-100">
       {/* Encabezado historial académico */}
-      <div className="sm:flex space-y-4 items-center justify-between mb-6">
+      <header className="sm:flex space-y-4 items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <div className="bg-brand-primary rounded-xl size-10 text-white flex items-center justify-center">
             <BookOpen className="size-5" />
           </div>
           <h2 className="text-2xl font-bold">Historial Académico</h2>
         </div>
-        <DropdownHistorial>Periodo</DropdownHistorial>
-      </div>
+      </header>
 
       {/* Tabla de notas */}
       <table className="w-full text-center border-separate border-spacing-y-2 mb-6">
@@ -56,12 +54,12 @@ const AcademicHistoryTable: FC<AcademyHistoryTableProps> = ({ DropdownHistorial,
         </tbody>
       </table>
 
-      <section className="mx-auto w-max rounded-xl bg-brand-primary py-4 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+      <footer className="mx-auto w-max rounded-xl bg-brand-primary py-4 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
         <p className="text-white font-bold text-lg flex items-center gap-2">
           <Award className="size-6" /> Promedio {average}
         </p>
-      </section>
-    </div>
+      </footer>
+    </section>
   )
 }
 export default AcademicHistoryTable
