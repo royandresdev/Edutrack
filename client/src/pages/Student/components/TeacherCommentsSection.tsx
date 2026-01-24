@@ -10,7 +10,7 @@ interface TeacherCommentsSectionProps {
 const TeacherCommentsSection: FC<TeacherCommentsSectionProps> = ({ courses }) => {
   return (
     <section className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border border-purple-100">
-      <div className="space-y-4 mb-6" >
+      <div className="space-y-4 mb-6">
         <h2 className="text-2xl font-bold text-left">
           <span className="size-10 rounded-xl bg-brand-primary inline-flex items-center justify-center mr-3">
             <MessageSquare className="text-white size-5" />
