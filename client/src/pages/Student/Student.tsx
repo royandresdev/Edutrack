@@ -1,6 +1,4 @@
-import AcademicHistoryContainer from "./containers/AcademicHistoryContainer.tsx";
-import StudentDataTable from "./components/StudentDataTable.tsx";
-import TeacherCommentsSection from "./components/TeacherCommentsSection.tsx";
+import { AcademicHistoryTable, StudentDataTable, TeacherCommentsSection } from "./components/index.ts";
 import { User } from "lucide-react";
 import { useContext } from "react";
 import { StudentContext } from "./contexts/StudentContext.ts";
@@ -42,7 +40,7 @@ const Student = () => {
       </section>
 
       <section className="mx-auto space-y-6">
-        {dashboard && <AcademicHistoryContainer courses={dashboard.courses} average={dashboard.average} />}
+        {dashboard && <AcademicHistoryTable courses={dashboard.courses} average={dashboard.average} />}
         {dashboard && <TeacherCommentsSection courses={dashboard.courses} />}
       </section>
     </main>
