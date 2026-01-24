@@ -13,16 +13,6 @@ export interface User {
   profileImageUrl: string;
 }
 
-export interface Student extends User {
-  tutorResume: {
-    id: string;
-    fullName: string;
-  };
-  period: string;
-  institution: string;
-  grade: string;
-}
-
 export interface Teacher extends User {
   subjects: string[];
 }
@@ -63,9 +53,4 @@ export interface Notification {
   id: string;
   message: string;
   date: string;
-}
-
-export interface Dashboard {
-  courses: Course[];
-  notifications: Notification[];
 }

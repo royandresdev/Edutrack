@@ -1,4 +1,4 @@
-import EstudianteView from "../components/EstudianteView.jsx";
+import Student from "../Student.tsx";
 import { useDashboard, useStudent } from "../../../hooks/index.js";
 
 const EstudianteContainer = () => {
@@ -6,7 +6,7 @@ const EstudianteContainer = () => {
   const { dashboard, average } = useDashboard();
 
   return student?.id && dashboard ? (
-    <EstudianteView
+    <Student
       student={student}
       dashboard={dashboard}
       average={average}

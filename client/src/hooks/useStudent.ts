@@ -4,7 +4,7 @@ import { DEMO_STUDENT } from "../constants.ts";
 import { RootState } from "../app/store.ts";
 import { getStudentById } from "../services/student.ts";
 import { handleSetUser } from "../features/authSlice.ts";
-import { Student } from "../types/index.ts";
+import { Student } from "../pages/Estudiante/types/index.ts";
 
 const useStudent = () => {
   const [isLoading, setIsLoading] = useState(false);

@@ -6,7 +6,7 @@ export const userCardsData: UserPreviewCardProps[] = [
         title: "Estudiantes",
         description: "Acceden fácilmente a su historial académico y reciben retroalimentación personalizada de sus docentes.",
         imageSrc: "/images/estudiante.png",
-        linkTo: "/estudiante",
+        linkTo: "/demo/student",
         icon: <BookOpen className="w-6 h-6" />
     },
     {

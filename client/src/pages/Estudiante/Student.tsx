@@ -1,17 +1,13 @@
-import { FC } from "react";
-import { Dashboard, Student } from "../../../types/index.ts";
-import AcademicHistoryContainer from "../containers/AcademicHistoryContainer.tsx";
-import StudentDataTable from "./StudentDataTable.tsx";
-import TeacherCommentsSection from "./TeacherCommentsSection.tsx";
+import AcademicHistoryContainer from "./containers/AcademicHistoryContainer.tsx";
+import StudentDataTable from "./components/StudentDataTable.tsx";
+import TeacherCommentsSection from "./components/TeacherCommentsSection.tsx";
 import { User } from "lucide-react";
+import { useContext } from "react";
+import { StudentContext } from "./contexts/StudentContext.ts";
 
-interface EstudianteViewProps {
-  student: Student;
-  dashboard: Dashboard;
-  average: number;
-}
+const Student = () => {
+  const { student, dashboard } = useContext(StudentContext);
 
-const EstudianteView: FC<EstudianteViewProps> = ({ student, dashboard, average }) => {
   return (
     <div className="max-w-7xl py-8 px-6 md:px-12 mx-auto space-y-6">
       <section>
@@ -48,11 +44,11 @@ const EstudianteView: FC<EstudianteViewProps> = ({ student, dashboard, average }
       </section>
 
       <section className="mx-auto space-y-6">
-        <AcademicHistoryContainer courses={dashboard.courses} average={average} />
-        <TeacherCommentsSection courses={dashboard.courses} />
+        {dashboard && <AcademicHistoryContainer courses={dashboard.courses} average={dashboard.average} />}
+        {dashboard && <TeacherCommentsSection courses={dashboard.courses} />}
       </section>
     </div>
   );
 };
 
-export default EstudianteView;
+export default Student;
