@@ -4,7 +4,7 @@ import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import Login from '../pages/Login/login.jsx'
 import { Toaster } from "sonner";
-import DemoStudent from "../pages/Estudiante/DemoStudent.tsx";
+import DemoStudent from "../pages/Student/DemoStudent.tsx";
 
 function MyRoutes() {
     return (
