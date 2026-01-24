@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Estudiante, Docente, Home } from "../pages/index.ts";
+import { Docente, Home } from "../pages/index.ts";
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import Login from '../pages/Login/login.jsx'
@@ -15,7 +15,6 @@ function MyRoutes() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/demo/student" element={<DemoStudent />} />
-                <Route path="/estudiante" element={<Estudiante />} />
                 <Route path="/docente" element={<Docente />} />
             </Routes>
             <Footer />

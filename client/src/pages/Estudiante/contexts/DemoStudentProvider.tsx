@@ -3,7 +3,7 @@ import { StudentContext } from "./StudentContext.ts"
 import { demoDashboard, demoStudent } from "../data/demo.ts";
 import { StudentContextValues } from "../types/index.ts";
 
-interface EstudianteProviderProps {
+interface DemoStudentProviderProps {
   children: ReactNode;
 }
 
@@ -14,7 +14,7 @@ const defaultStudentContextValue: StudentContextValues = {
 };
 
 
-const DemoStudentProvider: FC<EstudianteProviderProps> = ({ children }) => {
+const DemoStudentProvider: FC<DemoStudentProviderProps> = ({ children }) => {
   return (
     <StudentContext.Provider value={defaultStudentContextValue}>
       {children}
