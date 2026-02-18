@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState } from "react";
 import { StudentContext } from "./StudentContext.ts"
 import { demoDashboard, demoStudent } from "../data/demo.ts";
 import { StudentContextValues } from "../types/index.ts";
@@ -9,14 +9,16 @@ interface DemoStudentProviderProps {
 
 const defaultStudentContextValue: StudentContextValues = {
   type: "demo",
-  student: demoStudent,
+  data: demoStudent,
   dashboard: demoDashboard,
 };
 
 
 const DemoStudentProvider: FC<DemoStudentProviderProps> = ({ children }) => {
+  const [student] = useState(defaultStudentContextValue);
+
   return (
-    <StudentContext.Provider value={defaultStudentContextValue}>
+    <StudentContext.Provider value={student}>
       {children}
     </StudentContext.Provider>
   )

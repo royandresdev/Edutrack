@@ -1,10 +1,9 @@
 import { AcademicHistoryTable, StudentDataTable, TeacherCommentsSection } from "./components/index.ts";
 import { User } from "lucide-react";
-import { useContext } from "react";
-import { StudentContext } from "./contexts/StudentContext.ts";
+import { useStudentContext } from "./contexts/StudentContext.ts";
 
 const Student = () => {
-  const { student, dashboard } = useContext(StudentContext);
+  const { data: student, dashboard } = useStudentContext();
 
   return (
     <main className="max-w-7xl py-8 px-6 md:px-12 mx-auto space-y-6">

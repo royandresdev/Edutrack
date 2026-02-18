@@ -12,7 +12,7 @@ export interface Student extends User {
 
 export interface StudentContextValues {
   type: "demo" | "real" | "";
-  student: Student | null;
+  data: Student | null;
   dashboard: Dashboard | null;
 }
 
